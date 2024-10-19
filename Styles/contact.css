@@ -1,0 +1,205 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: white; /* Light Beige Background */
+    color: #333;
+}
+
+header {
+    background-color: #560835; /* Moderate Green */
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 300px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: darkgoldenrod; /* Bright Sun Yellow */
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-bar button:hover {
+    background-color: darkgoldenrod;
+}
+
+.account-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.account-links a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #560835; /* Moderate Green */
+    padding: 10px 0;
+    text-align: center; /* Center align navigation items */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center;
+}
+
+nav ul li {
+    margin: 5px 0; /* Vertical spacing */
+}
+
+nav ul li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #560835; /* Slightly darker green on hover */
+}
+
+/* Contact Section */
+.contact {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    text-align: center;
+    color: black; /* Moderate Green */
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus,
+.contact textarea:focus {
+    border-color: #4CAF50;
+}
+
+.contact button {
+    padding: 15px;
+    background-color: #560835; /* Moderate Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #560835;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #560835;
+    color: white;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Header Container Adjustments */
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    /* Search Bar Adjustments */
+    .search-bar {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        margin-bottom: 5px;
+        width: calc(100% - 22px); /* Adjust width to fit container */
+    }
+
+    .search-bar button {
+        width: 100%;
+    }
+
+    /* Navigation Adjustments */
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Vertical spacing for mobile */
+    }
+}

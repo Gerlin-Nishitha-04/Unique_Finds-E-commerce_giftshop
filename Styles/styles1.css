@@ -1,0 +1,267 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: white; /* Light Beige Background */
+    color: #333;
+}
+
+header {
+    background-color: #560835; /* Moderate Green */
+    color: white;
+    padding: 20px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 300px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: darkgoldenrod; /* Bright Sun Yellow */
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-bar button:hover {
+    background-color: darkgoldenrod;
+}
+
+.account-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.account-links a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main h1 {
+    font-size: 32px;
+    color: #560835; /* Moderate Green */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-card p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.quantity-controls {
+    margin: 10px 0;
+}
+
+.quantity-controls input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: darkgoldenrod; /* Soft Sky Blue */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: darkgoldenrod;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Header Container Adjustments */
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Search Bar Adjustments */
+    .search-bar {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        margin-bottom: 5px;
+        width: calc(100% - 22px); /* Adjust width to fit container */
+    }
+
+    .search-bar button {
+        width: 100%;
+    }
+
+    /* Navigation Adjustments */
+    nav {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    /* Center account links */
+    .account-links {
+        display: flex;
+        justify-content: center; /* Center account links horizontally */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .account-links a {
+        margin: 0 10px; /* Adjust spacing */
+    }
+
+    /* Product Grid Adjustments */
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .product-card {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Optional: Set a background color for the page */
+    font-family: Arial, sans-serif; /* Set a font family for consistency */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Makes the container full height of the viewport */
+}
+
+h1 {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #333; /* Optional: Set a color for the text */
+    margin-bottom: 20px; /* Space between the text and the button */
+}
+
+.home-button {
+    text-decoration: none; /* Remove underline from anchor tag */
+    color: #fff; /* Text color */
+    background-color: #ff9800; /* Background color */
+    padding: 10px 20px; /* Add padding for better click area */
+    border: none; /* Remove border for button element */
+    border-radius: 5px; /* Round the corners of the button */
+    font-size: 18px; /* Adjust font size as needed */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    display: inline-block; /* Ensure button does not stretch to full width */
+}
+
+.home-button:hover {
+    background-color: #e68900; /* Change background color on hover */
+    color: #fff; /* Ensure text remains readable on hover */
+}
+.product-image img {
+    width: 40%;
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+html, body {
+    margin: 0; /* Remove default margin */
+    height: 100%; /* Ensure full height for body */
+}
+
+.video-background {
+    position: fixed; /* Fixed to stay in the background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Send the video behind other content */
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the section */
+}
+
+.category-list {
+    position: relative; /* Ensure positioning is relative for absolute children */
+    z-index: 1; /* Ensure content is above the video */
+    color: white; /* Optional: Adjust text color for visibility */
+    padding: 20px; /* Optional: Add some padding */
+}

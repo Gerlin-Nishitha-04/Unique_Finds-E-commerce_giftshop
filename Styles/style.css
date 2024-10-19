@@ -1,0 +1,427 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: white; /* Light Beige Background */
+    color: #333;
+}
+
+header {
+    background-color: #560835; /* Moderate Green */
+    color: white;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: darkgoldenrod; /* Bright Sun Yellow */
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+button:hover {
+    background-color: darkgoldenrod;
+}
+
+.account-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.account-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('giftbg.jpg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 250px; 
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s forwards, slideIn 1.5s ease-out; /* Fade and slide effect */
+    text-align: middle;
+}
+
+.hero p {
+    font-size: 24px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 3s forwards, slideUp 2s ease-out; /* Fade and slide up effect */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hide slides initially */
+    transition: opacity 1s ease; /* Smooth transition for opacity */
+    background-size: cover;
+    background-position: center;
+}
+
+#slide1 {
+    background: url('../images/giftbg.jpg.jpg') no-repeat center center; /* Replace with your image */
+    background-size: cover;
+}
+
+#slide2 {
+    background: url('../images/giftbox2.jpg') no-repeat center center; /* Replace with your image */
+    background-size: cover;
+}
+
+#slide3 {
+    background: url('../images/giftboxes.jpg') no-repeat center center; /* Replace with your image */
+    background-size: cover;
+}
+
+/* Show the first slide by default */
+.hero-slide.active {
+    opacity: 1; /* Show the active slide */
+}
+
+
+
+/* Category Section */
+#category h2 {
+    font-size: 40px; /* Adjust the font size to be bigger */
+    text-align: center; /* Center align the heading */
+    margin-bottom: 20px; /* Add some space below the heading */
+    font-weight: bold; /* Optionally make the text bold */
+    color: #560835; /* Optional: Adjust the color */
+}
+
+#category-container {
+    display: flex;
+    flex-direction: column; /* Stack categories vertically */
+    align-items: center; /* Center align categories */
+    gap: 30px; /* Space between categories */
+    padding: 20px;
+    /* Padding around the category container */
+}
+
+.category-item {
+    display: flex; /* Enable flex layout for category items */
+    justify-content: center; /* Center align items horizontally */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Max width to keep categories aligned */
+}
+
+.category-box {
+    display: flex; /* Use flexbox for inner content */
+    flex-direction: row; /* Arrange image and content in a row */
+    align-items: flex-start; /* Align items at the start */
+    width: 100%; /* Full width of the category item */
+    border: 3px solid #560835; /* Border for visual separation */
+    border-radius: 10px; /* Rounded corners for the box */
+    background-color: #f9f9f9; /* Light background color */
+    padding: 15px; /* Padding within the category box */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.category-image {
+    width: 400px; /* Set a fixed width for images */
+    height: 400px; /* Set a fixed height for images */
+    object-fit: cover; /* Maintain aspect ratio while filling the space */
+    border-radius: 15px; /* Add rounded edges */
+    margin-right: 20px; /* Space between the image and text */
+}
+
+.category-details {
+    flex-grow: 1; /* Allow the details section to grow */
+    text-align: center; /* Center align text within details */
+}
+
+.category-description {
+    font-size: 22px; /* Adjust font size for the description */
+    color: #555; /* Slightly lighter color for description */
+    margin: 10px 0; /* Space around the description */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    height: 100%; /* Ensure it takes full height of the container */
+}
+
+
+.category-button {
+    height: 60px;               /* Fixed height for the button */
+    width: 250px;               /* Fixed width for the button */
+    order: 2;                   /* Order in flex container */
+    padding: 0;                 /* Remove padding to allow centering */
+    margin-top: 10px;           /* Margin above the button */
+    background-color: #560835;  /* Background color */
+    color: white;               /* Text color */
+    border: none;               /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    vertical-align: bottom;
+    font-size: 30px;            /* Font size */
+    display: flex;              /* Use flexbox to align items */
+    align-self: center;
+    align-items: center;        /* Center items vertically */
+    justify-content: center;    /* Center items horizontally */
+}
+
+.category-content {
+    display: flex;
+    flex-direction: column; /* Stack text and button vertically */
+    justify-content: center; /* Center text and button vertically */
+    align-items: flex-start; /* Align text and button to the left */
+    padding-left: 20px; /* Add some space between image and content */
+}
+
+.category-button:hover {
+    background-color: #560835; /* Darker button color on hover */
+}
+
+/* Header style for category title */
+.category-title {
+    font-size: 24px; /* Adjust as needed */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Text color */
+    margin: 0; /* Remove default margin */
+}
+.category-list {
+    position: relative; /* Ensure positioning is relative for absolute children */
+    z-index: 1; /* Ensure content is above the video */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Send the video behind other content */
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the section */
+}
+
+
+/* Footer */
+footer {
+    background-color: #560835; /* Moderate Green */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack header content vertically */
+        align-items: center; /* Center align items */
+        text-align: center; /* Center text for better alignment */
+    }
+
+    .search-bar {
+        flex-direction: column; /* Stack search input and button vertically */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input[type="text"] {
+        margin-right: 0;
+        margin-bottom: 5px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .search-bar button {
+        width: 100%;
+        max-width: none;
+    }
+
+    .account-links {
+        margin-top: 10px;
+        text-align: center; /* Center align account links */
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Center the links horizontally */
+        gap: 15px; /* Add some space between links */
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: center; /* Center navigation items */
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: row; /* Keep navigation items in a row */
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 15px; /* Add some space between items */
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    .hero {
+        padding: 30px 0; /* Reduce padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Adjust font size for mobile */
+    }
+
+    .hero p {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+
+  #category-container {
+    display: flex;
+    flex-direction: column; /* Stack categories vertically */
+    gap: 20px; /* Add space between categories */
+}
+
+.category-item {
+    width: 100%; /* Make each category item take full width */
+    display: flex; /* Allow flex properties for internal items */
+    justify-content: center; /* Center content within category */
+}
+
+.category-box {
+    text-align: center; /* Center align text and button */
+    padding: 15px; /* Add padding around the box */
+    border: 1px solid #ccc; /* Optional: Add border around each category */
+    border-radius: 5px; /* Optional: Round corners */
+    background-color: #f9f9f9; /* Optional: Light background color */
+}
+
+.category-image {
+    width: 150px; /* Set a fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.category-description {
+    font-size: 14px; /* Adjust font size for the description */
+    color: #555; /* Slightly lighter color for description */
+    margin: 10px 0; /* Add some space around the description */
+}
+
+.category-button {
+    padding: 10px 20px; /* Adjust padding for the button */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Round button corners */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.category-button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+
+    .cart {
+        width: 90%; /* Adjust width for mobile */
+        padding: 15px; /* Reduce padding for smaller screens */
+        margin: 15px auto;/* Adjust margin for mobile */
+    }
+
+    .cart h2 {
+        font-size: 100px; /* Adjust font size for mobile */
+    }
+
+    .cart p {
+        font-size: 16px; /* Adjust font size for mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    /* Restore original layout for larger screens if needed */
+    .header-content {
+        flex-direction: row; /* Align items in a row for larger screens */
+        align-items: center;
+    }
+
+    .search-bar {
+        flex-direction: row; /* Align search input and button in a row */
+    }
+
+    nav ul {
+        flex-direction: row; /* Align navigation items in a row */
+    }
+}       
