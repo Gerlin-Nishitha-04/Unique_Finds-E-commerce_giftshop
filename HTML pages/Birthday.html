@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIQUE FINDS - Birthday</title>
+    <link rel="stylesheet" href="../Styles/styles1.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">UNIQUE FINDS</div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for products...">
+                <button onclick="searchProducts()">Search</button>
+            </div>
+            <div class="account-links">
+                <a href="index.html" id="home-link">Home</a>
+                <a href="cart.html" id="cart-link">Cart</a>
+                <a href="contact.html" id="contact">Contact</a>
+                <a href="login_new.html" id="login">Sign up/Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="video-background">
+            <video autoplay loop muted>
+                <source src="../images/birthdayvid.mp4.mp4" type="video/mp4"> <!-- Replace with your video file -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h1>BIRTHDAY PRODUCTS</h1>
+        <div id="birthday-products" class="product-container">
+            <!-- Birthday products will be dynamically loaded here -->
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="../images/watch.jpg" alt="Watch">
+            </div>
+            <p>Watch</p>
+            <p>₹ 1500</p>
+            <div class="quantity-controls">
+                <input type="number" id="watch" value="1" min="1">
+            </div>
+            <button class="add-to-cart" onclick="addToCart('watch', 1500, 'watch.jpg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="../images/chain.jpg" alt="Chain">
+            </div>
+            <p>Chain</p>
+            <p>₹ 700</p>
+            <div class="quantity-controls">
+                <input type="number" id="chain" value="1" min="1">
+            </div>
+            <button class="add-to-cart" onclick="addToCart('chain', 700, 'chain.jpg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="../images/teddy.jpg" alt="Teddy">
+            </div>
+            <p>Teddy</p>
+            <p>₹ 500</p>
+            <div class="quantity-controls">
+                <input type="number" id="teddy" value="1" min="1">
+            </div>
+            <button class="add-to-cart" onclick="addToCart('teddy', 500, 'teddy.jpg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="../images/bracelet.jpg" alt="Bracelet">
+            </div>
+            <p>Bracelet</p>
+            <p>₹ 350</p>
+            <div class="quantity-controls">
+                <input type="number" id="bracelet" value="1" min="1">
+            </div>
+            <button class="add-to-cart" onclick="addToCart('bracelet', 350, 'bracelet.jpg')">Add to Cart</button>
+        </div>
+    </main>
+
+    <script>
+        // Function to load birthday products dynamically from localStorage
+        function loadBirthdayProducts() {
+            const products = JSON.parse(localStorage.getItem('Birthdays')) || [];
+            const container = document.getElementById('birthday-products');
+            container.innerHTML = ''; // Clear existing products
+
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <p>${product.name}</p>
+                    <p>₹${product.price}</p>
+                    <div class="quantity-controls">
+                        <input type="number" id="${product.name.toLowerCase()}" value="1" min="1">
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('${product.name}', ${product.price}, '${product.image}')">Add to Cart</button>
+                `;
+
+                container.appendChild(productCard);
+            });
+        }
+
+        // Add to cart function with quantity control
+        function addToCart(name, price, image) {
+            const quantity = parseInt(document.getElementById(name.toLowerCase()).value);
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the item already exists in the cart
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                // Update the quantity if the item already exists
+                existingItem.quantity += quantity;
+            } else {
+                // Add new item to the cart
+                cart.push({ name, price, image, quantity });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(`${name} has been added to the cart!`);
+        }
+
+        // Function to update cart count in the header
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+        }
+
+        // Listen for localStorage changes and reload products dynamically
+        window.addEventListener('storage', function() {
+            loadBirthdayProducts();
+        });
+
+        // On page load, dynamically load the birthday products
+        window.onload = loadBirthdayProducts;
+
+        // Search functionality to find a product from the predefined list
+        const products = [
+            { name: 'Anniversary', url: 'Anniversary.html' },
+            { name: 'Couple Ring', url: 'Anniversary.html' },
+            { name: 'Teddy Bear', url: 'Anniversary.html' },
+            { name: 'Photo frame', url: 'Anniversary.html' },
+            { name: 'Birthdays', url: 'Birthday.html' },
+            { name: 'Watch', url: 'Birthday.html' },
+            { name: 'Chain', url: 'Birthday.html' },
+            { name: 'Teddy', url: 'Birthday.html' },
+            { name: 'Bracelet', url: 'Birthday.html' },
+            { name: 'Combos,Cakes and bouquets', url: 'Combos.html' },
+            { name: 'Combos', url: 'Combos.html' },
+            { name: 'Cakes', url: 'Combos.html' },
+            { name: 'Bournville', url: 'Combos.html' },
+            { name: 'Ferrero Rocher', url: 'Combos.html' },
+            { name: 'Bouquets', url: 'Combos.html' },
+            { name: 'Handmade gifts', url: 'handmade.html' },
+            { name: 'Wood Art', url: 'handmade.html' },
+            { name: 'Wish Jar', url: 'handmade.html' },
+            { name: 'Knitted Card', url: 'handmade.html' },
+            { name: 'Explosive Box', url: 'handmade.html' },
+            { name: 'Glass Painting', url: 'handmade.html' }
+        ];
+
+        // Search products and redirect to the matched product page
+        function searchProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const matchedProduct = products.find(product => product.name.toLowerCase() === query);
+
+            if (matchedProduct) {
+                window.location.href = matchedProduct.url;
+            } else {
+                alert('Product not found. Please try a different search term.');
+            }
+        }
+    </script>
+</body>
+</html>

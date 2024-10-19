@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIQUE FINDS</title>
+    <link rel="stylesheet" href="../Styles/style.css">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <div class="logo">
+            <a href="index.html"style="comicsans',Arial;">UNIQUE FINDS</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+        <div class="account-links">
+            <a href="index.html" id="home-link">Home</a>
+            <a href="cart.html" id="cart-link">Cart</a>
+            <a href="contact.html" id="contact">Contact</a>
+            <a href="login_new.html" id="login">Sign up/Login</a>
+        </div>
+    </div>
+</header>
+    <section class="hero">
+    <div class="hero-slide" id="slide1">
+        <h1>Welcome to Our Gift Shop</h1>
+        <p>Find the perfect gift for your loved ones.</p>
+    </div>
+<div class="hero-slide" id="slide2">
+            <h1>Unique Handmade Items</h1>
+            <p>Explore our collection of handcrafted gifts.</p>
+        </div>
+        <div class="hero-slide" id="slide3">
+            <h1>Exclusive Offers</h1>
+            <p>Check out our latest promotions and discounts!</p>
+        </div>
+   
+</section>
+
+
+   <section id="category" class="category-list">
+    <div class="video-background">
+        <video autoplay loop muted>
+            <source src="../images/star.mp4" type="video/mp4"> <!-- Replace with your video file -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <h2>Category</h2>
+    <div id="category-container">
+        <!-- First Category: Anniversary -->
+        <div class="category-item">
+            <div class="category-box">
+                <img src="../images/Anniversary.jpg" class="category-image" alt="Anniversary Gifts">
+                <div class="category-content">
+                <p class="category-description">Every anniversary is a milestone in the journey of love, and the perfect gift can make the occasion even 
+                    more special. Our selection of anniversary gifts is designed to celebrate the unique bond between couples. From personalized keepsakes
+                    that capture unforgettable moments to elegant jewelry that shines as bright as their love, we offer a wide variety of meaningful gifts.
+                    Whether you're looking for something traditional, like a classic pair of couple rings, or a modern gift like customized photo frames, 
+                    our collection is sure to inspire.Celebrate love, honor memories, and make every anniversary unforgettable with gifts that speak from the heart.</p>
+                <br>
+                <br>
+                <br>
+                <button onclick="window.location.href='Anniversary.html'" class="category-button">Anniversary</button>
+                </div>
+            </div>
+        </div>
+        <!-- Second Category: Birthdays -->
+        <div class="category-item">
+            <div class="category-box">
+                <img src="../images/Birthday.jpg" class="category-image" alt="Birthday Gifts">
+                <div class="category-content">
+                <p class="category-description">Celebrate the joy of birthdays with a selection of thoughtful and memorable gifts that make every occasion special. 
+                    Delightful surprises that bring a smile, our birthday gifts cater to every taste and preference.  Whether you're looking for something unique for
+                     a loved one or a delightful treat for yourself, our curated collection ensures you'll find the perfect gift to celebrate another year of life and
+                      create lasting memories. Make every birthday unforgettable with gifts that are as special as the person receiving them!</p>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                <button onclick="window.location.href='Birthday.html'" class="category-button">Birthdays</button>
+                </div>
+            </div>
+        </div>
+        <!-- Third Category: Combos -->
+        <div class="category-item">
+            <div class="category-box">
+                <img src="../images/Combos.jpg" class="category-image" alt="Combos, Cakes, and Bouquets">
+                <div class="category-content">
+                <p class="category-description">Why choose just one gift when you can have the perfect combination? Our Combos are thoughtfully curated to bring together
+                     the best of chocolates, bouquets, and cakes. Whether you're celebrating a special day or making any moment memorable, these combos deliver a 
+                     complete and delightful experience. Indulge your loved ones with a sweet treat, the beauty of fresh flowers, and the irresistible charm of 
+                     cakes—ideal for any occasion!</p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                <button onclick="window.location.href='Combos.html'" class="category-button">Combos</button>
+                </div>
+            </div>
+        </div>
+        <!-- Fourth Category: Handmade Gifts -->
+        <div class="category-item">
+            <div class="category-box">
+                <img src="../images/handmade.jpg" class="category-image" alt="Handmade Gifts">
+                <div class="category-content">
+                <p class="category-description">At UNIQUE FINDS, we celebrate the beauty and craftsmanship of handmade gifts. Each piece is lovingly crafted by skilled
+                     artisans, ensuring that every item is unique and full of character. From intricately designed wooden art to delightful knitted creations, our 
+                     handmade collection offers something special for everyone. Perfect for birthdays, anniversaries, or just because, these gifts embody thoughtfulness 
+                     and creativity. Choose a handmade gift to show your loved ones how much you care—because nothing says "I appreciate you" quite like a one-of-a-kind
+                     treasure!</p>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
+                <button onclick="window.location.href='handmade.html'" class="category-button">Handmade Gifts</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   
+    <footer>
+        <p>&copy; 2024 UNIQUE FINDS</p>
+    </footer>
+
+   <script> // Example product data (this could be loaded from a server or a file)
+const products = [
+    { name: 'Anniversary', url: 'Anniversary.html' },
+    { name: 'Couple Ring', url: 'Anniversary.html' },
+    { name: 'Teddy Bear', url: 'Anniversary.html' },
+    { name: 'Photo frame', url: 'Anniversary.html' },
+    { name: 'Birthdays', url: 'Birthday.html' },
+    { name: 'Watch', url: 'Birthday.html' },
+    { name: 'Chain', url: 'Birthday.html' },
+    { name: 'Teddy', url: 'Birthday.html' },
+    { name: 'Bracelet', url: 'Birthday.html' },
+    { name: 'Combos,Cakes and bouquets', url: 'Combos.html' },
+    { name: 'Combos', url: 'Combos.html' },
+    { name: 'Cakes', url: 'Combos.html' },
+    { name: 'Bournville', url: 'Combos.html' },
+    { name: 'Ferrero Rocher', url: 'Combos.html' },
+    { name: 'Bouquets', url: 'Combos.html' },
+    { name: 'Handmade gifts', url: 'handmade.html' },
+    { name: 'Wood Art', url: 'handmade.html' },
+    { name: 'Wish Jar', url: 'handmade.html' },
+    { name: 'Knitted Card', url: 'handmade.html' },
+    { name: 'Explosive Box', url: 'handmade.html' },
+    { name: 'Glass Painting', url: 'handmade.html' }
+];
+
+function searchProducts() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    
+    // Check if query matches any product name
+    const matchedProduct = products.find(product => product.name.toLowerCase() === query);
+    
+    if (matchedProduct) {
+        // Redirect to the product page if a match is found
+        window.location.href = matchedProduct.url;
+    } else {
+        // Handle no match found (optional)
+        alert('Product not found. Please try a different search term.');
+    }
+}
+</script>
+<script>
+const slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
+}
+
+// Function to change slides every 5 seconds
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+    showSlide(currentSlide);
+}
+
+// Show the first slide initially
+showSlide(currentSlide);
+setInterval(nextSlide, 5000); // Change slide every 5 seconds
+</script>
+</body>
+</html>
